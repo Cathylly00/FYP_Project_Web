@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/index.css" />
 
     <script src="./js/call_API.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js"></script>
 </head>
 <body>
@@ -41,6 +42,8 @@
 
             </div>
 
+            <p id="log"></p>
+
             <button id="Btn_Generate" id="Btn_Generate" type="button" onclick="call_Gemini()">生成圖片！</button>
     
         </div>
@@ -55,6 +58,7 @@
         })
         .then(() => {
             // Start to use liff's api
+            console.log(liff.isLoggedIn());  // 判斷開啟此網頁的 LINE 使用者是否為登入狀態
         })
         .catch((err) => {
             // Error happens during initialization

@@ -29,6 +29,8 @@ function call_Gemini()
         ]
     }
 
+    document.getElementById("log").textContent="Prompt: " + ${prompt};
+
     fetch(url, {
         method: "POST",
         headers: headers,
@@ -38,8 +40,11 @@ function call_Gemini()
                 //成功結果處理
         .then(response => response.json())
         .then((json) => {
-            console.log(json.candidates[0].content.parts[0].text)
-            call_SdWebUi(json.candidates[0].content.parts[0].text);
+            const aiPrompt = json.candidates[0].content.parts[0].text;
+
+            console.log(aiPrompt)
+            document.getElementById("log").textContent="AI Prompt: " + aiPrompt;
+            call_SdWebUi(aiPrompt);
         })
 
         .catch((error) => {
@@ -51,6 +56,8 @@ function call_Gemini()
 /* ---------- call_SdWebUi ---------- */
 
 function call_SdWebUi(img_prompt) {
+
+    document.getElementById("log").textContent="Call SdWebUi";
 
     const url = `http://172.20.10.10:7860/sdapi/v1/txt2img`
 
@@ -81,6 +88,8 @@ function call_SdWebUi(img_prompt) {
         .then(response => response.json())
         .then(json => {
             console.log(json.images[0]);
+
+            document.getElementById("log").textContent="Generated Image";
 
             document.getElementById("AI_img_box").style.display = "none";
             document.getElementById("img_AI_with_Txt").style.display = "block";
