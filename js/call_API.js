@@ -52,7 +52,7 @@ function call_Gemini()
 
 function call_SdWebUi(img_prompt) {
 
-    const url = `http://127.0.0.1:7860/sdapi/v1/txt2img`
+    const url = `http://172.20.10.10:7860/sdapi/v1/txt2img`
 
     let headers = {
         "Content-Type": "application/json; charset=utf-8",
