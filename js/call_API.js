@@ -29,7 +29,7 @@ function call_Gemini()
         ]
     }
 
-    document.getElementById("log").textContent="Prompt: " + ${prompt};
+    document.getElementById("log").textContent="Prompt: " + prompt;
 
     fetch(url, {
         method: "POST",
