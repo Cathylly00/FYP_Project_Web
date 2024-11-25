@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/index.css" />
 
     <script src="./js/call_API.js"></script>
+    <script src="./js/click_func.js"></script>
     <script src="./js/jquery-3.7.1.min.js"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js"></script>
 </head>
@@ -44,7 +45,9 @@
 
             <p id="log"></p>
 
-            <button id="Btn_Generate" id="Btn_Generate" type="button" onclick="call_Gemini()">生成圖片！</button>
+            <button id="Btn_Generate" class="Btn_Main" type="button" onclick="call_Gemini()">生成圖片！</button>
+
+            <button id="Btn_Share" class="Btn_Main" type="button" onclick="shareMsg()">分享圖片！</button>
     
         </div>
 

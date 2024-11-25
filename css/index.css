@@ -55,11 +55,15 @@ body {
     resize: none;
 }
 
+#input_prompt:focus {
+    outline: none !important;
+}
+
 ::placeholder {
     color: #E3C1AA;
 }
 
-#Btn_Generate {
+.Btn_Main {
     margin-top: 24px;
     height: 48px;
     width: 100%;
@@ -69,6 +73,10 @@ body {
     font-weight: bold;
     border: 0px;
     border-radius: 60px;
+}
+
+#Btn_Share {
+    display: none;
 }
 
 #AI_img_area {

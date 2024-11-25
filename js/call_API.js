@@ -4,6 +4,7 @@ function call_Gemini()
 {
 
     document.getElementById("input_area").style.display = "none";
+    document.getElementById("Btn_Generate").style.display = "none";
     document.getElementById("AI_img_area").style.display = "block";
     document.getElementById("AI_img_box").style.display = "block";
 
@@ -59,7 +60,8 @@ function call_SdWebUi(img_prompt) {
 
     document.getElementById("log").textContent="Call SdWebUi";
 
-    const url = `http://172.20.10.10:7860/sdapi/v1/txt2img`
+    const url = `https://127.0.0.1:7860/sdapi/v1/txt2img`
+    // const url = `http://10.119.2.62:7860/sdapi/v1/txt2img`
 
     let headers = {
         "Content-Type": "application/json; charset=utf-8",
@@ -92,7 +94,7 @@ function call_SdWebUi(img_prompt) {
             document.getElementById("log").textContent="Generated Image";
 
             document.getElementById("AI_img_box").style.display = "none";
-            document.getElementById("img_AI_with_Txt").style.display = "block";
+            document.getElementById("img_AI").style.display = "block";
 
             var img_src = `data:image/jpg;base64,${json.images[0]}`;
 
@@ -132,6 +134,8 @@ function drawTxt(img_src) {
         ctx.fillText(text, 125, 250);
 
     });
+
+    document.getElementById("Btn_Share").style.display = "block";
 
     console.log("END");
 }
