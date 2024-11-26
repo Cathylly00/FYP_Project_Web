@@ -10,7 +10,7 @@ function call_Gemini()
 
     var  prompt = document.getElementById("input_prompt").value;
 
-    const key = "AIzaSyBxR8Aq1Q_fk5K1xCSxJSRR4zKz_PGDQyg"
+    const key = "AIzaSyCSIddiQ2YNWe2Z2MdwOIo8FV-RNIc8GDY"
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${key}`
 
     let headers = {
@@ -95,7 +95,7 @@ function call_SdWebUi(img_prompt) {
             document.getElementById("log").textContent="Generated Image";
 
             document.getElementById("AI_img_box").style.display = "none";
-            document.getElementById("img_AI").style.display = "block";
+            document.getElementById("img_AI_with_Txt").style.display = "block";
 
             var img_src = `data:image/jpg;base64,${json.images[0]}`;
 
