@@ -60,7 +60,8 @@ function call_SdWebUi(img_prompt) {
 
     document.getElementById("log").textContent="Call SdWebUi";
 
-    const url = `https://127.0.0.1:7860/sdapi/v1/txt2img`
+    // const url = `https://127.0.0.1:7860/sdapi/v1/txt2img`
+    const url = `https://172.20.10.10:7860/sdapi/v1/txt2img`
     // const url = `http://10.119.2.62:7860/sdapi/v1/txt2img`
 
     let headers = {
